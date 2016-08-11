@@ -34,6 +34,8 @@ var direction;
 
 
 
+
+
 window.onload = function () {
     temp = document.getElementById("temperature");
     loc = document.getElementById("location");
