@@ -1,0 +1,14 @@
+.card{
+    
+    display: block;
+    border: 5px;
+    background-color: grey;
+    height: 450px;
+    border-radius: 30px;
+    margin-top: 15px;
+}
+#time, #date{
+    color: blue;
+    font-size: 24px;
+
+}
