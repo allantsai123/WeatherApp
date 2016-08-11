@@ -9,27 +9,31 @@
 </head>
 <body>
 	<div class="container" id="header">
-		<h1>The Weather App</h1>
+		<h1>The Weather App</h1> 
 		<h2>Date: <div id="date">Current date</div></h2>
 		<h2>Time: <div id="time">Current time in Vancouver,Canada</div></h2>
+		<div class = "row">
+			<button id="unitConvert"type="button" class="btn btn-primary">Change to Fahrenheit</button>
+			<button id="addCity"type="button" class="btn btn-primary">Add a city</button>
+		</div>
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-3 col-sm-6">
+			<div class="col-md-3">
 				<div class="card">
 					<div class="location" id="location">
 						Vancouver
 					</div>
 					<div class="top">
-						<div class="icon col-md-4"><img id="icon" width="75px" src="img/code/200.png"/></div>
-						<div class="temp col-md-7"><span id="temperature">0</span>&deg;</div>
+						<div class="icon"><img id="icon" width="75px" src="img/code/800.png"/></div>
+						<div class="temp"><span id="temperature">0</span>&deg;</div>
 					</div>	
 					<div class="mid">
-						<div class="humidity col-lg-6">
+						<div class="humidity">
 							<img src="img/humidity.png" height="20px"/>
 							<span id="humidity">0</span> %
 						</div>
-						<div class="wind col-lg-6">
+						<div class="wind">
 							<img src="img/wind.png" height="20px"/>
 							<span id="wind">0</span> m/s <span id="direction">N</span>
 						</div>
@@ -46,7 +50,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3 col-sm-6">
+			<div class="col-md-3">
 				<div class="card">
 					<div class="location">
 						Victoria
@@ -59,7 +63,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3 col-sm-6">
+			<div class="col-md-3">
 				<div class="card">
 					<div class="location">
 						Kelowna
@@ -71,8 +75,7 @@
 						icon
 					</div>
 				</div>
-			</div>
-			
+			</div>			
 		</div>	
 	</div>
 

@@ -18,10 +18,10 @@ function sendRequest(url){
             var weather = {};
             weather.icon = data.weather[0].id;
             weather.humidity = data.main.humidity;
-            weather.wind = data.main.speed;
-            weather.direction = data.main.deg;
+            weather.wind = data.wind.speed;
+            weather.direction = degreeToDirection(data.wind.deg);
             weather.loc = data.name;
-            weather.temp = data.main.temp;
+            weather.temp = K2C(data.main.temp);
             update(weather);
             console.log(data);
         }
@@ -65,7 +65,7 @@ window.onload = function(){
 
 
 
-
+//temperature convert
 function K2F(k){
     return Math.round(k*(9/5)-459.67);
 }
@@ -75,7 +75,21 @@ function K2C(k){
 }
 
 
-
+//degree to direction
+function degreeToDirection(degree){
+    var range = 360/16;
+    var low = 360 - range/2;
+    var high = (low+range ) % 360;
+    var angles = ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"];
+    for (i in angles){
+        if(degree>=low && degree<high){
+            return angles[i];
+        }
+        low = (low + range)%360;
+        high = (high+range)%360;
+    }
+    return "N";
+}
 
 
 
