@@ -2,7 +2,7 @@
     display: block;
     border: 3px solid blue;
     background-color: grey;
-    height: 400px;
+    height: relative;
     border-radius: 20px;
     margin-top: 15px;
 }
@@ -33,7 +33,7 @@
 .mid,.mid.row{		
 	height:relative;
 	display: block;	
-	font-size: 1.3em;
+	font-size: 1.1em;
 	border:2px solid black;
 	margin-top: 5px;
 	text-align: center;
@@ -45,4 +45,7 @@
 	margin-top: 10px;
 	margin-right: 0px;
     margin-left: 0px;
+}
+#forecastShort{
+	text-align: center;
 }

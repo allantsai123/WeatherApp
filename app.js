@@ -1,11 +1,57 @@
 var APPID = "a261d0b5f91d49be3dc6b16ab109b71b";
+
+
+var cities=["Vancouver,ca","Victoria,ca","Kelowna,ca"];
+
 var temp;
 var loc;
 var icon;
 var humidity;
 var wind;
 var direction;
+$(function(){
+    $('')
 
+
+});
+// var forecastTime=[];
+// var forecastTemp=[];
+// function updateForeCastByCity(city,country){
+//     var forecast = "http://api.openweathermap.org/data/2.5/forecast?q="+ city+","+country+"&appid="+APPID;
+//     sendRequestforecast(url);
+// }
+// function sendRequestforeCast(url){
+//     var xmlhttp = new XMLHttpRequest();
+//     xmlhttp.onreadystatechange = function(){
+//         if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+//             var data = JSON.parse(xmlhttp.responseText);
+//             var forecast = {};
+//             for(var i =0;i<5;i++){
+//                 forecast.forecastTemp[i] = K2C(data.list[i].main.temp);
+//                 forecast.forecastTime[i] = data.list[i].dt_txt;
+//             }
+//             updateForecast(forecast);
+//         }
+//     };
+//     xmlhttp.open("GET",url,true);
+//     xmlhttp.send();
+
+// }
+// function updateForecast(forecast){
+
+//     for(var i = 0;i<5;i++){
+
+//     }
+    // wind.innerHTML = weather.wind;
+    // direction.innerHTML = weather.direction;
+    // humidity.innerHTML = weather.humidity;
+    // loc.innerHTML = weather.loc;
+    // temp.innerHTML = weather.temp;
+    // icon.src = "img/code/" + weather.icon + ".png";
+// }
+
+
+//Current weather in given city
 function updateByCity(city,country){
     var url = "http://api.openweathermap.org/data/2.5/weather?q="+ city+","+country+"&appid="+APPID;
     sendRequest(url);
@@ -27,10 +73,7 @@ function sendRequest(url){
     };
     xmlhttp.open("GET",url,true);
     xmlhttp.send();
-
 }
-
-
 function update(weather){
     wind.innerHTML = weather.wind;
     direction.innerHTML = weather.direction;
@@ -39,30 +82,24 @@ function update(weather){
     temp.innerHTML = weather.temp;
     icon.src = "img/code/" + weather.icon + ".png";
 }
-
 window.onload = function(){
     temp = document.getElementById("temperature");
-    loc = document.getElementById("location");
+    loc = document.getElementById("location0");
     icon = document.getElementById("icon");
     humidity = document.getElementById("humidity");
     wind = document.getElementById("wind");
     direction = document.getElementById("direction");
 
-    updateByCity("vancouver,Ca");
+    updateByCity(cities[0]);
 }
 
-
-
-
-//temperature convert
+//temperature conversion
 function K2F(k){
     return Math.round(k*(9/5)-459.67);
 }
-
 function K2C(k){
     return Math.round(k - 273.15);
 }
-
 
 //degree to direction
 function degreeToDirection(degree){
@@ -79,12 +116,6 @@ function degreeToDirection(degree){
     }
     return "N";
 }
-
-
-
-
-
-
 //current date and time for the brower's time zone
 (function () {
     function startTime() {
