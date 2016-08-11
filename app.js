@@ -23,7 +23,6 @@ function sendRequest(url){
             weather.loc = data.name;
             weather.temp = K2C(data.main.temp);
             update(weather);
-            console.log(data);
         }
     };
     xmlhttp.open("GET",url,true);
@@ -49,17 +48,7 @@ window.onload = function(){
     wind = document.getElementById("wind");
     direction = document.getElementById("direction");
 
-    // var weather ={};
-    // weather.wind =3.5;
-    // weather.direction = "N";
-    // weather.humidity = 35;
-    // weather.loc = "vancouver";
-    // weather.temp = "145";
-    // weather.icon = 200;
-
-    // update(weather);
-
-    updateByCity("Vancouver,Ca");
+    updateByCity("vancouver,Ca");
 }
 
 

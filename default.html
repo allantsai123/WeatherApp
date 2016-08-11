@@ -13,32 +13,34 @@
 		<h2>Date: <div id="date">Current date</div></h2>
 		<h2>Time: <div id="time">Current time in Vancouver,Canada</div></h2>
 		<div class = "row">
-			<button id="unitConvert"type="button" class="btn btn-primary">Change to Fahrenheit</button>
-			<button id="addCity"type="button" class="btn btn-primary">Add a city</button>
+			<button id="info" type="button" class="btn btn-lg btn-info">How to use</button>
+			<button id="unitConvert"type="button" class="btn btn-primary btn-lg">Convert to Fahrenheit</button>
+			<button id="addCity"type="button" class="btn btn-primary btn-lg">Add a city</button>
+			<button type="button" class="btn btn-lg btn-danger">Remove a city</button>
 		</div>
 	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3">
-				<div class="card">
+				<div class="card row">
 					<div class="location" id="location">
 						Vancouver
 					</div>
-					<div class="top">
-						<div class="icon"><img id="icon" width="75px" src="img/code/800.png"/></div>
-						<div class="temp"><span id="temperature">0</span>&deg;</div>
+					<div class="top row">
+						<div class="icon col-md-6"><img id="icon" width="75px" src="img/code/800.png"/></div>
+						<div class="temp col-md-6"><span id="temperature">0</span>&deg;</div>
 					</div>	
-					<div class="mid">
-						<div class="humidity">
+					<div class="mid row">
+						<div class="humidity col-md-4">
 							<img src="img/humidity.png" height="20px"/>
 							<span id="humidity">0</span> %
 						</div>
-						<div class="wind">
+						<div class="wind col-md-8">
 							<img src="img/wind.png" height="20px"/>
 							<span id="wind">0</span> m/s <span id="direction">N</span>
 						</div>
 					</div>
-					<div class="bot">
+					<div class="bot row">
 						<div class="forecastShort">
 							<span id="forecastShort">forecast for next 5 days</span>
 							<p id="day1">day 1</p>

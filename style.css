@@ -13,30 +13,36 @@
 }
 .location{
 	text-align: center;
-	height: 65px;
+	height: relative;
 	display:block;
 	border-radius: 20px;
 	background-color: pink;
-	font-size: 2em;
+	font-size: 3em;
 	margin-top: 2px;
 }
-.top{
-	height: 75px;
+.top,.top.row{
+	height:relative;
 	display: block;
 	background-color: #4ea27f;
-	font-size: 2em;
+	font-size: 3em;
 	margin-top: 5px;
 	text-align: center;
+		margin-right: 0px;
+    margin-left: 0px;
 }
-.mid{
-	height: 60px;
+.mid,.mid.row{		
+	height:relative;
 	display: block;	
-	font-size: 1em;
+	font-size: 1.3em;
 	border:2px solid black;
 	margin-top: 5px;
 	text-align: center;
+	margin-right: 0px;
+    margin-left: 0px;
 }
 
-.bot{
+.bot, .bot.row{
 	margin-top: 10px;
+	margin-right: 0px;
+    margin-left: 0px;
 }
