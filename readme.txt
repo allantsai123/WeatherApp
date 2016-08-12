@@ -9,10 +9,6 @@ This application will use Open Weather Map API (http://openweathermap.org) for a
 
 To do:
 
-	1. Two other cities in BC
-	2. Short and long term forecasts
-	3. Change between Celsius and Fahrenheit 
-	4. Adding a city (Add a card)
-	5. Animation to turn a card
-	6. Info on how to use the app
-	7. Add more icons for different weathers
+	1. long term forecasts
+	2. Animation to turn a card
+	3. Adding a city (Add a card)

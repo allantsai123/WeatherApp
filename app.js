@@ -1,29 +1,12 @@
 var APPID = "a261d0b5f91d49be3dc6b16ab109b71b";
 
-var locVan,iconVan,tempVan,humidityVan,windVan,directionVan;
-var locVic,iconVic,tempVic,humidityVic,windVic,directionVic;
-var locKel,iconKel,tempKel,humidityKel,windKel,directionKel;
-
-var forecastTempVan=[];
-var forecastTempVic=[];
-var forecastTempKel=[];
-
-var forecastTimeVan=[];
-var forecastTimeVic=[];
-var forecastTimeKel=[];
-
-
 $(document).ready(function(){
 
-    vancouverWeather("vancouver","ca");
-    victoriaWeather("victoria","ca");
-    kelownaWeather("kelowna","ca");
+    firstCity("Vancouver","ca");
+    secondCity("Victoria,ca");
+    thirdCity("kelowna,ca");
 
-    function weather(loc,icon,temp,humidity,wind,direction,forecastTemp){
-
-    }
-
-    function vancouverWeather(city,country){
+    function firstCity(city,country){
         var api = "http://api.openweathermap.org/data/2.5/weather?q="+city+","+country+"&appid="+APPID;
         var forecastS="http://api.openweathermap.org/data/2.5/forecast?q="+city+","+country+"&appid="+APPID;
         $.getJSON(api,function(data){
@@ -76,7 +59,7 @@ $(document).ready(function(){
             });       
         });  
     }
-    function victoriaWeather(city,country){
+    function secondCity(city,country){
         var api = "http://api.openweathermap.org/data/2.5/weather?q="+city+","+country+"&appid="+APPID;
         var forecastS="http://api.openweathermap.org/data/2.5/forecast?q="+city+","+country+"&appid="+APPID;
         $.getJSON(api,function(data){
@@ -130,7 +113,7 @@ $(document).ready(function(){
 
     }
 
-    function kelownaWeather(city,country){
+    function thirdCity(city,country){
         var api = "http://api.openweathermap.org/data/2.5/weather?q="+city+","+country+"&appid="+APPID;
         var forecastS="http://api.openweathermap.org/data/2.5/forecast?q="+city+","+country+"&appid="+APPID;
         $.getJSON(api,function(data){
@@ -187,12 +170,23 @@ $(document).ready(function(){
 
     //the "how to use" button
     $("#info").click(function(){
-        alert("Click on the convert button allows you to switch between Fahrenheit and Celsius. By clicking the card, you will be able to see the long term forecast for the next 14 days");
+        alert("The temperature are default to Celsius, by clicking on the convert button allows you to switch between Fahrenheit and Celsius. And by clicking the card, you will be able to see the long term forecast for the next 14 days");
     });
 
 });
     
 
+var locVan,iconVan,tempVan,humidityVan,windVan,directionVan;
+var locVic,iconVic,tempVic,humidityVic,windVic,directionVic;
+var locKel,iconKel,tempKel,humidityKel,windKel,directionKel;
+
+var forecastTempVan=[];
+var forecastTempVic=[];
+var forecastTempKel=[];
+
+var forecastTimeVan=[];
+var forecastTimeVic=[];
+var forecastTimeKel=[];
 
 
 //temperature conversion
