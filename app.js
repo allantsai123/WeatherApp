@@ -1,97 +1,95 @@
 var APPID = "a261d0b5f91d49be3dc6b16ab109b71b";
 
+var loc,icon,temp,humidity,wind,direction;
+var forecastTemp=[];
+var forecastTime=[];
+var tempSwap=false;
 
-var cities=["Vancouver,ca","Victoria,ca","Kelowna,ca"];
 
-var temp;
-var loc;
-var icon;
-var humidity;
-var wind;
-var direction;
-$(function(){
-    $('')
+$(document).ready(function(){
 
+    function cityCurrentWeather(city,country){
+        var api = "http://api.openweathermap.org/data/2.5/weather?q="+city+","+country+"&appid="+APPID;
+        var forecastS="http://api.openweathermap.org/data/2.5/forecast?q="+city+","+country+"&appid="+APPID;
+        $.getJSON(api,function(data){
+            //getting data from json
+            loc = data.name;
+            icon = data.weather[0].id;
+            temp = data.main.temp;
+            humidity = data.main.humidity;
+            wind = data.wind.speed;
+            direction = data.wind.deg;
+          
+            console.log(loc,icon,temp,humidity,wind,direction);
+
+            //display the location 
+            $("#location").html(loc);
+
+            //display the weather icon
+            $("#icon").attr("src","img/code/"+icon+".png");
+
+            //display and convert the temp with the button
+            $("#temperature").html(K2C(temp));
+
+            $("#convert").click(function(){
+                if(tempSwap===false){
+                    $("#temperature").html(K2F(temp));
+                    $("#forecastTemp0").html(K2F(forecastTemp[0]));
+                    $("#forecastTemp1").html(K2F(forecastTemp[1]));
+                    $("#forecastTemp2").html(K2F(forecastTemp[2]));
+                    $("#forecastTemp3").html(K2F(forecastTemp[3]));
+                    $("#forecastTemp4").html(K2F(forecastTemp[4]));
+                    
+                    tempSwap=true;
+                    $("#convert").html("Convert to Celcius");
+                }else{
+                    $("#temperature").html(K2C(temp));
+                    $("#forecastTemp0").html(K2C(forecastTemp[0]));
+                    $("#forecastTemp1").html(K2C(forecastTemp[1]));
+                    $("#forecastTemp2").html(K2C(forecastTemp[2]));
+                    $("#forecastTemp3").html(K2C(forecastTemp[3]));
+                    $("#forecastTemp4").html(K2C(forecastTemp[4]));
+                    tempSwap=false;
+                    $("#convert").html("Convert to Fahrenheit");
+                    }
+            })
+
+            //display humidity
+            $("#humidity").html(humidity);
+            
+            //display wind
+            $("#wind").html(wind);
+            
+            //display wind directions
+            $("direction").html(degreeToDirection(direction));
+
+  
+        }); 
+
+        $.getJSON(forecastS,function(data){
+
+            for(var i = 0;i<5;i++){
+                forecastTemp[i] = data.list[i].main.temp;     
+                console.log(forecastTemp);
+            }
+            //display short forecast temp
+            $("#forecastTemp0").html(K2C(forecastTemp[0]));
+            $("#forecastTemp1").html(K2C(forecastTemp[1]));
+            $("#forecastTemp2").html(K2C(forecastTemp[2]));
+            $("#forecastTemp3").html(K2C(forecastTemp[3]));
+            $("#forecastTemp4").html(K2C(forecastTemp[4]));
+            
+        });      
+    }
+
+
+   cityCurrentWeather("Vancouver,ca");
 
 });
-// var forecastTime=[];
-// var forecastTemp=[];
-// function updateForeCastByCity(city,country){
-//     var forecast = "http://api.openweathermap.org/data/2.5/forecast?q="+ city+","+country+"&appid="+APPID;
-//     sendRequestforecast(url);
-// }
-// function sendRequestforeCast(url){
-//     var xmlhttp = new XMLHttpRequest();
-//     xmlhttp.onreadystatechange = function(){
-//         if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
-//             var data = JSON.parse(xmlhttp.responseText);
-//             var forecast = {};
-//             for(var i =0;i<5;i++){
-//                 forecast.forecastTemp[i] = K2C(data.list[i].main.temp);
-//                 forecast.forecastTime[i] = data.list[i].dt_txt;
-//             }
-//             updateForecast(forecast);
-//         }
-//     };
-//     xmlhttp.open("GET",url,true);
-//     xmlhttp.send();
-
-// }
-// function updateForecast(forecast){
-
-//     for(var i = 0;i<5;i++){
-
-//     }
-    // wind.innerHTML = weather.wind;
-    // direction.innerHTML = weather.direction;
-    // humidity.innerHTML = weather.humidity;
-    // loc.innerHTML = weather.loc;
-    // temp.innerHTML = weather.temp;
-    // icon.src = "img/code/" + weather.icon + ".png";
-// }
 
 
-//Current weather in given city
-function updateByCity(city,country){
-    var url = "http://api.openweathermap.org/data/2.5/weather?q="+ city+","+country+"&appid="+APPID;
-    sendRequest(url);
-}
-function sendRequest(url){
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function(){
-        if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
-            var data = JSON.parse(xmlhttp.responseText);
-            var weather = {};
-            weather.icon = data.weather[0].id;
-            weather.humidity = data.main.humidity;
-            weather.wind = data.wind.speed;
-            weather.direction = degreeToDirection(data.wind.deg);
-            weather.loc = data.name;
-            weather.temp = K2C(data.main.temp);
-            update(weather);
-        }
-    };
-    xmlhttp.open("GET",url,true);
-    xmlhttp.send();
-}
-function update(weather){
-    wind.innerHTML = weather.wind;
-    direction.innerHTML = weather.direction;
-    humidity.innerHTML = weather.humidity;
-    loc.innerHTML = weather.loc;
-    temp.innerHTML = weather.temp;
-    icon.src = "img/code/" + weather.icon + ".png";
-}
-window.onload = function(){
-    temp = document.getElementById("temperature");
-    loc = document.getElementById("location0");
-    icon = document.getElementById("icon");
-    humidity = document.getElementById("humidity");
-    wind = document.getElementById("wind");
-    direction = document.getElementById("direction");
 
-    updateByCity(cities[0]);
-}
+
 
 //temperature conversion
 function K2F(k){
@@ -116,6 +114,7 @@ function degreeToDirection(degree){
     }
     return "N";
 }
+
 //current date and time for the brower's time zone
 (function () {
     function startTime() {
