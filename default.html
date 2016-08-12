@@ -15,8 +15,9 @@
 		<h2>Time: <div id="time">Current time in Vancouver,Canada</div></h2>
 		<div class = "row">
 			<button id="info" type="button" class="btn btn-lg btn-info">How to use</button>
-			<button id="convert" type="button" class="btn btn-primary btn-lg">Convert to Fahrenheit</button>
-			<button id="addCity" type="button" class="btn btn-primary btn-lg">Add a city</button>
+			<button id="convertF" type="button" class="btn btn-primary btn-lg">Convert to Fahrenheit</button>
+			<button id="convertC" type="button" class="btn btn-primary btn-lg">Convert to Celsius</button>
+			<button id="addCity" type="button" class="btn btn-success btn-lg">Add a city</button>
 			<button id="removeCity" type="button" class="btn btn-lg btn-danger">Remove a city</button>
 		</div>
 	</div>
@@ -42,7 +43,7 @@
 							<span id="windVan">0</span> m/s <span id="directionVan">NaN</span>
 						</div>
 					</div>
-					<div class="bot row"  id="forecastShort">
+					<div class="bot row forecastShort">
 						<h4>Forecast for the next 15 hours</h4>
 						<div class="row">
 							<div class="col-xs-8">The next 3 hours</div>
@@ -72,7 +73,7 @@
 					<div id="locationVic">
 						city
 					</div>
-					<div class="top row">
+					<div class="top row ">
 						<div class="icon col-md-6"><img id="iconVic" width="75px" src="img/code/211.png"/></div>
 						<div class="temp col-md-6"><span id="temperatureVic">temp</span>&deg;</div>
 					</div>	
@@ -86,7 +87,7 @@
 							<span id="windVic">NaN</span> m/s <span id="directionVic">NaN</span>
 						</div>
 					</div>
-					<div class="bot row" id="forecastShort">
+					<div class="bot row forecastShort">
 						<h4>Forecast for the next 15 hours</h4>
 						<div class="row">
 							<div class="col-xs-8">The next 3 hours</div>
@@ -130,7 +131,7 @@
 							<span id="windKel">NaN</span> m/s <span id="directionKel">NaN</span>
 						</div>
 					</div>
-					<div class="bot row"  id="forecastShort">
+					<div class="bot row forecastShort" >
 						<h4>Forecast for the next 15 hours</h4>
 						<div class="row">
 							<div class="col-xs-8">The next 3 hours</div>

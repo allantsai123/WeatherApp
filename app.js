@@ -1,69 +1,79 @@
 var APPID = "a261d0b5f91d49be3dc6b16ab109b71b";
 
-var loc,icon,temp,humidity,wind,direction;
-var forecastTemp=[];
-var forecastTime=[];
-var tempSwap=false;
+var locVan,iconVan,tempVan,humidityVan,windVan,directionVan;
+var locVic,iconVic,tempVic,humidityVic,windVic,directionVic;
+var locKel,iconKel,tempKel,humidityKel,windKel,directionKel;
+
+var forecastTempVan=[];
+var forecastTempVic=[];
+var forecastTempKel=[];
+
+var forecastTimeVan=[];
+var forecastTimeVic=[];
+var forecastTimeKel=[];
 
 
 $(document).ready(function(){
 
     vancouverWeather("vancouver","ca");
-    kelownaWeather("kelowna","ca");
     victoriaWeather("victoria","ca");
+    kelownaWeather("kelowna","ca");
+
+    function weather(loc,icon,temp,humidity,wind,direction,forecastTemp){
+
+    }
 
     function vancouverWeather(city,country){
         var api = "http://api.openweathermap.org/data/2.5/weather?q="+city+","+country+"&appid="+APPID;
         var forecastS="http://api.openweathermap.org/data/2.5/forecast?q="+city+","+country+"&appid="+APPID;
         $.getJSON(api,function(data){
-            loc = data.name;
-            icon = data.weather[0].id;
-            temp = data.main.temp;
-            humidity = data.main.humidity;
-            wind = data.wind.speed;
-            direction = data.wind.deg;
-            console.log(loc,icon,temp,humidity,wind,direction);
-             $("#locationVan").html(loc);
-             $("#iconVan").attr("src","img/code/"+icon+".png");
-             $("#humidityVan").html(humidity);
-             $("#windVan").html(wind);
-             $("#directionVan").html(degreeToDirection(direction));
+            locVan = data.name;
+            iconVan = data.weather[0].id;
+            tempVan = data.main.temp;
+            humidityVan = data.main.humidity;
+            windVan = data.wind.speed;
+            directionVan = data.wind.deg;
+            console.log(locVan,iconVan,tempVan,humidityVan,windVan,directionVan);
+            $("#locationVan").html(locVan);
+            $("#iconVan").attr("src","img/code/"+iconVan+".png");
+            $("#humidityVan").html(humidityVan);
+            $("#windVan").html(windVan);
+            $("#directionVan").html(degreeToDirection(directionVan));
 
-             $("#temperatureVan").html(K2C(temp));
-             $("#convert").click(function(){
-                 if(tempSwap===false){
-                    $("#temperatureVan").html(K2F(temp));
-                    $("#forecastTemp0Van").html(K2F(forecastTemp[0]));
-                    $("#forecastTemp1Van").html(K2F(forecastTemp[1]));
-                    $("#forecastTemp2Van").html(K2F(forecastTemp[2]));
-                    $("#forecastTemp3Van").html(K2F(forecastTemp[3]));
-                    $("#forecastTemp4Van").html(K2F(forecastTemp[4]));
-                    
-                    tempSwap=true;
-                    $("#convert").html("Convert to Celsius");
-                }else{
-                    $("#temperatureVan").html(K2C(temp));
-                    $("#forecastTemp0Van").html(K2C(forecastTemp[0]));
-                    $("#forecastTemp1Van").html(K2C(forecastTemp[1]));
-                    $("#forecastTemp2Van").html(K2C(forecastTemp[2]));
-                    $("#forecastTemp3Van").html(K2C(forecastTemp[3]));
-                    $("#forecastTemp4Van").html(K2C(forecastTemp[4]));
-                    tempSwap=false;
-                    $("#convert").html("Convert to Fahrenheit");
-                }
-            })
+            $("#temperatureVan").html(K2C(tempVan));
+            $("#forecastTemp0Van").html(K2C(forecastTempVan[0]));
+            $("#forecastTemp1Van").html(K2C(forecastTempVan[1]));
+            $("#forecastTemp2Van").html(K2C(forecastTempVan[2]));
+            $("#forecastTemp3Van").html(K2C(forecastTempVan[3]));
+            $("#forecastTemp4Van").html(K2C(forecastTempVan[4]));
         }); 
         $.getJSON(forecastS,function(data){
             for(var i = 0;i<5;i++){
-                forecastTemp[i] = data.list[i].main.temp;    
+                forecastTempVan[i] = data.list[i].main.temp; // + data.city.name;     
             }
-            console.log(forecastTemp);
-            $("#forecastTemp0Van").html(K2C(forecastTemp[0]));
-            $("#forecastTemp1Van").html(K2C(forecastTemp[1]));
-            $("#forecastTemp2Van").html(K2C(forecastTemp[2]));
-            $("#forecastTemp3Van").html(K2C(forecastTemp[3]));
-            $("#forecastTemp4Van").html(K2C(forecastTemp[4]));  
-            
+            console.log(forecastTempVan);
+            $("#forecastTemp0Van").html(K2C(forecastTempVan[0]));
+            $("#forecastTemp1Van").html(K2C(forecastTempVan[1]));
+            $("#forecastTemp2Van").html(K2C(forecastTempVan[2]));
+            $("#forecastTemp3Van").html(K2C(forecastTempVan[3]));
+            $("#forecastTemp4Van").html(K2C(forecastTempVan[4]));  
+
+            $("#convertF").click(function(){
+                $("#temperatureVan").html(K2F(tempVan));
+                $("#forecastTemp0Van").html(K2F(forecastTempVan[0]));
+                $("#forecastTemp1Van").html(K2F(forecastTempVan[1]));
+                $("#forecastTemp2Van").html(K2F(forecastTempVan[2]));
+                $("#forecastTemp3Van").html(K2F(forecastTempVan[3]));
+                $("#forecastTemp4Van").html(K2F(forecastTempVan[4])); 
+            }); 
+            $("#convertC").click(function(){
+                $("#temperatureVan").html(K2C(tempVan));
+                $("#forecastTemp0Van").html(K2C(forecastTempVan[0]));
+                $("#forecastTemp1Van").html(K2C(forecastTempVan[1]));
+                $("#forecastTemp2Van").html(K2C(forecastTempVan[2]));
+                $("#forecastTemp3Van").html(K2C(forecastTempVan[3]));
+                $("#forecastTemp4Van").html(K2C(forecastTempVan[4])); 
+            });       
         });  
     }
 
@@ -71,111 +81,122 @@ $(document).ready(function(){
         var api = "http://api.openweathermap.org/data/2.5/weather?q="+city+","+country+"&appid="+APPID;
         var forecastS="http://api.openweathermap.org/data/2.5/forecast?q="+city+","+country+"&appid="+APPID;
         $.getJSON(api,function(data){
-            loc = data.name;
-            icon = data.weather[0].id;
-            temp = data.main.temp;
-            humidity = data.main.humidity;
-            wind = data.wind.speed;
-            direction = data.wind.deg;
-            console.log(loc,icon,temp,humidity,wind,direction);
-             $("#locationVic").html(loc);
-             $("#iconVic").attr("src","img/code/"+icon+".png");
-             $("#humidityVic").html(humidity);
-             $("#windVic").html(wind);
-             $("#directionVic").html(degreeToDirection(direction));
-             $("#temperatureVic").html(K2C(temp));
-             $("#convert").click(function(){
-                 if(tempSwap===false){
-                    $("#temperatureVic").html(K2F(temp));
-                    $("#forecastTemp0Vic").html(K2F(forecastTemp[0]));
-                    $("#forecastTemp1Vic").html(K2F(forecastTemp[1]));
-                    $("#forecastTemp2Vic").html(K2F(forecastTemp[2]));
-                    $("#forecastTemp3Vic").html(K2F(forecastTemp[3]));
-                    $("#forecastTemp4Vic").html(K2F(forecastTemp[4]));
-                    tempSwap=true;
-                    $("#convert").html("Convert to Celsius");
-                }else{
-                    $("#temperatureVic").html(K2C(temp));
-                    $("#forecastTemp0Vic").html(K2C(forecastTemp[0]));
-                    $("#forecastTemp1Vic").html(K2C(forecastTemp[1]));
-                    $("#forecastTemp2Vic").html(K2C(forecastTemp[2]));
-                    $("#forecastTemp3Vic").html(K2C(forecastTemp[3]));
-                    $("#forecastTemp4Vic").html(K2C(forecastTemp[4]));
-                    tempSwap=false;
-                    $("#convert").html("Convert to Fahrenheit");
-                }
-            })
+            locVic = data.name;
+            iconVic = data.weather[0].id;
+            tempVic = data.main.temp;
+            humidityVic = data.main.humidity;
+            windVic = data.wind.speed;
+            directionVic = data.wind.deg;
+            console.log(locVic,iconVic,tempVic,humidityVic,windVic,directionVic);
+            $("#locationVic").html(locVic);
+            $("#iconVic").attr("src","img/code/"+iconVic+".png");
+            $("#humidityVic").html(humidityVic);
+            $("#windVic").html(windVic);
+            $("#directionVic").html(degreeToDirection(directionVic));
+            $("#temperatureVic").html(K2C(tempVic));
+            $("#forecastTemp0Vic").html(K2C(forecastTempVic[0]));
+            $("#forecastTemp1Vic").html(K2C(forecastTempVic[1]));
+            $("#forecastTemp2Vic").html(K2C(forecastTempVic[2]));
+            $("#forecastTemp3Vic").html(K2C(forecastTempVic[3]));
+            $("#forecastTemp4Vic").html(K2C(forecastTempVic[4]));
         }); 
         $.getJSON(forecastS,function(data){
             for(var i = 0;i<5;i++){
-                forecastTemp[i] = data.list[i].main.temp;     
+                forecastTempVic[i] = data.list[i].main.temp;     
             }
-            console.log(forecastTemp);
-            $("#forecastTemp0Vic").html(K2C(forecastTemp[0]));
-            $("#forecastTemp1Vic").html(K2C(forecastTemp[1]));
-            $("#forecastTemp2Vic").html(K2C(forecastTemp[2]));
-            $("#forecastTemp3Vic").html(K2C(forecastTemp[3]));
-            $("#forecastTemp4Vic").html(K2C(forecastTemp[4]));  
+            console.log(forecastTempVic);
+            $("#forecastTemp0Vic").html(K2C(forecastTempVic[0]));
+            $("#forecastTemp1Vic").html(K2C(forecastTempVic[1]));
+            $("#forecastTemp2Vic").html(K2C(forecastTempVic[2]));
+            $("#forecastTemp3Vic").html(K2C(forecastTempVic[3]));
+            $("#forecastTemp4Vic").html(K2C(forecastTempVic[4]));  
             
+            $("#convertF").click(function(){
+                $("#temperatureVic").html(K2F(tempVic));
+                $("#forecastTemp0Vic").html(K2F(forecastTempVic[0]));
+                $("#forecastTemp1Vic").html(K2F(forecastTempVic[1]));
+                $("#forecastTemp2Vic").html(K2F(forecastTempVic[2]));
+                $("#forecastTemp3Vic").html(K2F(forecastTempVic[3]));
+                $("#forecastTemp4Vic").html(K2F(forecastTempVic[4])); 
+            }); 
+            $("#convertC").click(function(){
+                $("#temperatureVic").html(K2C(tempVic));
+                $("#forecastTemp0Vic").html(K2C(forecastTempVic[0]));
+                $("#forecastTemp1Vic").html(K2C(forecastTempVic[1]));
+                $("#forecastTemp2Vic").html(K2C(forecastTempVic[2]));
+                $("#forecastTemp3Vic").html(K2C(forecastTempVic[3]));
+                $("#forecastTemp4Vic").html(K2C(forecastTempVic[4])); 
+            });
         }); 
+
     }
 
     function kelownaWeather(city,country){
         var api = "http://api.openweathermap.org/data/2.5/weather?q="+city+","+country+"&appid="+APPID;
         var forecastS="http://api.openweathermap.org/data/2.5/forecast?q="+city+","+country+"&appid="+APPID;
         $.getJSON(api,function(data){
-            loc = data.name;
-            icon = data.weather[0].id;
-            temp = data.main.temp;
-            humidity = data.main.humidity;
-            wind = data.wind.speed;
-            direction = data.wind.deg;
-            console.log(loc,icon,temp,humidity,wind,direction);
-             $("#locationKel").html(loc);
-             $("#iconKel").attr("src","img/code/"+icon+".png");
-             $("#humidityKel").html(humidity);
-             $("#windKel").html(wind);
-             $("#directionKel").html(degreeToDirection(direction));
+            locKel = data.name;
+            iconKel = data.weather[0].id;
+            tempKel = data.main.temp;
+            humidityKel = data.main.humidity;
+            windKel = data.wind.speed;
+            directionKel = data.wind.deg;
+            console.log(locKel,iconKel,tempKel,humidityKel,windKel,directionKel);
+            $("#locationKel").html(locKel);
+            $("#iconKel").attr("src","img/code/"+iconKel+".png");
+            $("#humidityKel").html(humidityKel);
+            $("#windKel").html(windKel);
+            $("#directionKel").html(degreeToDirection(directionKel));
              
-             $("#temperatureKel").html(K2C(temp));
-             $("#convert").click(function(){
-                 if(tempSwap===false){
-                    $("#temperatureKel").html(K2F(temp));
-                    $("#forecastTemp0Kel").html(K2F(forecastTemp[0]));
-                    $("#forecastTemp1Kel").html(K2F(forecastTemp[1]));
-                    $("#forecastTemp2Kel").html(K2F(forecastTemp[2]));
-                    $("#forecastTemp3Kel").html(K2F(forecastTemp[3]));
-                    $("#forecastTemp4Kel").html(K2F(forecastTemp[4]));
-                    
-                    tempSwap=true;
-                    $("#convert").html("Convert to Celsius");
-                }else{
-                    $("#temperatureKel").html(K2C(temp));
-                    $("#forecastTemp0Kel").html(K2C(forecastTemp[0]));
-                    $("#forecastTemp1Kel").html(K2C(forecastTemp[1]));
-                    $("#forecastTemp2Kel").html(K2C(forecastTemp[2]));
-                    $("#forecastTemp3Kel").html(K2C(forecastTemp[3]));
-                    $("#forecastTemp4Kel").html(K2C(forecastTemp[4]));
-                    tempSwap=false;
-                    $("#convert").html("Convert to Fahrenheit");
-                }
-            })
+            $("#temperatureKel").html(K2C(tempKel));
+            $("#forecastTemp0Kel").html(K2C(forecastTempKel[0]));
+            $("#forecastTemp1Kel").html(K2C(forecastTempKel[1]));
+            $("#forecastTemp2Kel").html(K2C(forecastTempKel[2]));
+            $("#forecastTemp3Kel").html(K2C(forecastTempKel[3]));
+            $("#forecastTemp4Kel").html(K2C(forecastTempKel[4]));
         }); 
         $.getJSON(forecastS, function(data){
             for(var i = 0;i<5;i++){
-                forecastTemp[i] = data.list[i].main.temp;    
+                forecastTempKel[i] = data.list[i].main.temp;    
             }
-            console.log(forecastTemp);
-            $("#forecastTemp0Kel").html(K2C(forecastTemp[0]));
-            $("#forecastTemp1Kel").html(K2C(forecastTemp[1]));
-            $("#forecastTemp2Kel").html(K2C(forecastTemp[2]));
-            $("#forecastTemp3Kel").html(K2C(forecastTemp[3]));
-            $("#forecastTemp4Kel").html(K2C(forecastTemp[4]));  
+            console.log(forecastTempKel);
+            $("#forecastTemp0Kel").html(K2C(forecastTempKel[0]));
+            $("#forecastTemp1Kel").html(K2C(forecastTempKel[1]));
+            $("#forecastTemp2Kel").html(K2C(forecastTempKel[2]));
+            $("#forecastTemp3Kel").html(K2C(forecastTempKel[3]));
+            $("#forecastTemp4Kel").html(K2C(forecastTempKel[4])); 
+
+            $("#convertF").click(function(){
+                $("#temperatureKel").html(K2F(tempKel));
+                $("#forecastTemp0Kel").html(K2F(forecastTempKel[0]));
+                $("#forecastTemp1Kel").html(K2F(forecastTempKel[1]));
+                $("#forecastTemp2Kel").html(K2F(forecastTempKel[2]));
+                $("#forecastTemp3Kel").html(K2F(forecastTempKel[3]));
+                $("#forecastTemp4Kel").html(K2F(forecastTempKel[4])); 
+            }); 
+            $("#convertC").click(function(){
+                $("#temperatureKel").html(K2C(tempKel));
+                $("#forecastTemp0Kel").html(K2C(forecastTempKel[0]));
+                $("#forecastTemp1Kel").html(K2C(forecastTempKel[1]));
+                $("#forecastTemp2Kel").html(K2C(forecastTempKel[2]));
+                $("#forecastTemp3Kel").html(K2C(forecastTempKel[3]));
+                $("#forecastTemp4Kel").html(K2C(forecastTempKel[4])); 
+            });
             
         }); 
     }
 
+
+
+    //the "how to use" button
+    $("#info").click(function(){
+        alert("Click on the convert button allows you to switch between Fahrenheit and Celsius. By clicking the card, you will be able to see the long term forecast for the next 14 days");
+    });
+
 });
+    
+
+
 
 //temperature conversion
 function K2F(k){
@@ -195,8 +216,8 @@ function degreeToDirection(degree){
         if(degree>=low && degree<high){
             return angles[i];
         }
-        low = (low + range)%360;
-        high = (high+range)%360;
+        low = (low + range) % 360;
+        high = (high + range) % 360;
     }
     return "N";
 }
