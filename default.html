@@ -20,102 +20,139 @@
 			<button id="removeCity" type="button" class="btn btn-lg btn-danger">Remove a city</button>
 		</div>
 	</div>
+
 	<div class="container">
-		<div class="row">
-			<div class="col-md-3">
-				<div class="card" id="card">
-					<div id="location">
+		<div class="row">	
+			<div class="col-md-4">
+				<div class="card">
+					<div id="locationVan">
 						city
 					</div>
 					<div class="top row">
-						<div class="icon col-md-6"><img id="icon" width="75px" src="img/code/211.png"/></div>
-						<div class="temp col-md-6"><span id="temperature">0</span>&deg;</div>
+						<div class="icon col-md-6"><img id="iconVan" width="75px" src="img/code/211.png"/></div>
+						<div class="temp col-md-6"><span id="temperatureVan">temp</span>&deg;</div>
 					</div>	
 					<div class="mid row">
 						<div class="humidity col-md-4">
 							<img src="img/humidity.png" height="20px"/>
-							<span id="humidity">0</span> %
+							<span id="humidityVan">0</span> %
 						</div>
 						<div class="wind col-md-8">
 							<img src="img/wind.png" height="20px"/>
-							<span id="wind">0</span> m/s <span id="direction">N</span>
+							<span id="windVan">0</span> m/s <span id="directionVan">NaN</span>
 						</div>
 					</div>
 					<div class="bot row"  id="forecastShort">
 						<h4>Forecast for the next 15 hours</h4>
 						<div class="row">
 							<div class="col-xs-8">The next 3 hours</div>
-							<div class="col-xs-4"><span id = "forecastTemp0">temp</span>&deg;</div>
+							<div class="col-xs-4"><span id = "forecastTemp0Van">temp</span>&deg;</div>
 						</div>
 						<div class="row">
 							<div class="col-xs-8">The next 6 hours</div>
-							<div class="col-xs-4"><span id = "forecastTemp1">temp</span>&deg;</div>
+							<div class="col-xs-4"><span id = "forecastTemp1Van">temp</span>&deg;</div>
 						</div>
 						<div class="row">
 							<div class="col-xs-8">The next 9 hours</div>
-							<div class="col-xs-4"><span id = "forecastTemp2">temp</span>&deg;</div>
+							<div class="col-xs-4"><span id = "forecastTemp2Van">temp</span>&deg;</div>
 						</div>
 						<div class="row">
 							<div class="col-xs-8">The next 12 hours</div>
-							<div class="col-xs-4"><span id = "forecastTemp3">temp</span>&deg;</div>
+							<div class="col-xs-4"><span id = "forecastTemp3Van">temp</span>&deg;</div>
 						</div>
 						<div class="row">
 							<div class="col-xs-8">The next 15 hours</div>
-							<div class="col-xs-4"><span id = "forecastTemp4">temp</span>&deg;</div>
+							<div class="col-xs-4"><span id = "forecastTemp4Van">temp</span>&deg;</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3">
-				<div class="card" id="card2">
-					<div id="location">
-						Victoria
+			<div class="col-md-4">
+				<div class="card">
+					<div id="locationVic">
+						city
 					</div>
 					<div class="top row">
-						<div class="icon col-md-6"><img id="icon" width="75px" src="img/code/800.png"/></div>
-						<div class="temp col-md-6"><span id="temperature">0</span>&deg;</div>
+						<div class="icon col-md-6"><img id="iconVic" width="75px" src="img/code/211.png"/></div>
+						<div class="temp col-md-6"><span id="temperatureVic">temp</span>&deg;</div>
 					</div>	
 					<div class="mid row">
 						<div class="humidity col-md-4">
 							<img src="img/humidity.png" height="20px"/>
-							<span id="humidity">0</span> %
+							<span id="humidityVic">NaN</span> %
 						</div>
 						<div class="wind col-md-8">
 							<img src="img/wind.png" height="20px"/>
-							<span id="wind">0</span> m/s <span id="direction">N</span>
+							<span id="windVic">NaN</span> m/s <span id="directionVic">NaN</span>
 						</div>
 					</div>
-					<div class="bot row">
-						<h4 id="forecastShort">Forecast for the next 15 hours</h4>
-						<div id = "forecastTime" class="col-md-6">time</div>
-						<div id = "forecastTemp" class="col-md-6">temp</div>
+					<div class="bot row" id="forecastShort">
+						<h4>Forecast for the next 15 hours</h4>
+						<div class="row">
+							<div class="col-xs-8">The next 3 hours</div>
+							<div class="col-xs-4"><span id = "forecastTemp0Vic">temp</span>&deg;</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-8">The next 6 hours</div>
+							<div class="col-xs-4"><span id = "forecastTemp1Vic">temp</span>&deg;</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-8">The next 9 hours</div>
+							<div class="col-xs-4"><span id = "forecastTemp2Vic">temp</span>&deg;</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-8">The next 12 hours</div>
+							<div class="col-xs-4"><span id = "forecastTemp3Vic">temp</span>&deg;</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-8">The next 15 hours</div>
+							<div class="col-xs-4"><span id = "forecastTemp4Vic">temp</span>&deg;</div>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3">
-				<div class="card" id="card3">
-					<div id="location">
-						Kelowna
+			<div class="col-md-4">
+				<div class="card" id="card">
+					<div id="locationKel">
+						city
 					</div>
-					<!-- <div class="top row">
-						<div class="icon col-md-6"><img id="icon" width="75px" src="img/code/800.png"/></div>
-						<div class="temp col-md-6"><span id="temperature">0</span>&deg;</div>
+					<div class="top row">
+						<div class="icon col-md-6"><img id="iconKel" width="75px" src="img/code/211.png"/></div>
+						<div class="temp col-md-6"><span id="temperatureKel">temp</span>&deg;</div>
 					</div>	
 					<div class="mid row">
 						<div class="humidity col-md-4">
 							<img src="img/humidity.png" height="20px"/>
-							<span id="humidity">0</span> %
+							<span id="humidityKel">NaN</span> %
 						</div>
 						<div class="wind col-md-8">
 							<img src="img/wind.png" height="20px"/>
-							<span id="wind">0</span> m/s <span id="direction">N</span>
+							<span id="windKel">NaN</span> m/s <span id="directionKel">NaN</span>
 						</div>
 					</div>
-					<div class="bot row">
-						<h4 id="forecastShort">Forecast for the next 15 hours</h4>
-						<div id = "forecastTime" class="col-md-6">time</div>
-						<div id = "forecastTemp" class="col-md-6">temp</div>
-					</div> -->
+					<div class="bot row"  id="forecastShort">
+						<h4>Forecast for the next 15 hours</h4>
+						<div class="row">
+							<div class="col-xs-8">The next 3 hours</div>
+							<div class="col-xs-4"><span id = "forecastTemp0Kel">temp</span>&deg;</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-8">The next 6 hours</div>
+							<div class="col-xs-4"><span id = "forecastTemp1Kel">temp</span>&deg;</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-8">The next 9 hours</div>
+							<div class="col-xs-4"><span id = "forecastTemp2Kel">temp</span>&deg;</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-8">The next 12 hours</div>
+							<div class="col-xs-4"><span id = "forecastTemp3Kel">temp</span>&deg;</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-8">The next 15 hours</div>
+							<div class="col-xs-4"><span id = "forecastTemp4Kel">temp</span>&deg;</div>
+						</div>
+					</div>
 				</div>
 			</div>			
 		</div>	
