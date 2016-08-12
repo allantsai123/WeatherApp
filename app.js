@@ -24,23 +24,6 @@ $(document).ready(function(){
             $("#directionVan").html(degreeToDirection(directionVan));
 
             $("#temperatureVan").html(K2C(tempVan));
-            $("#forecastTemp0Van").html(K2C(forecastTempVan[0]));
-            $("#forecastTemp1Van").html(K2C(forecastTempVan[1]));
-            $("#forecastTemp2Van").html(K2C(forecastTempVan[2]));
-            $("#forecastTemp3Van").html(K2C(forecastTempVan[3]));
-            $("#forecastTemp4Van").html(K2C(forecastTempVan[4]));
-        }); 
-        $.getJSON(forecastS,function(data){
-            for(var i = 0;i<5;i++){
-                forecastTempVan[i] = data.list[i].main.temp; // + data.city.name;     
-            }
-            console.log(forecastTempVan);
-            $("#forecastTemp0Van").html(K2C(forecastTempVan[0]));
-            $("#forecastTemp1Van").html(K2C(forecastTempVan[1]));
-            $("#forecastTemp2Van").html(K2C(forecastTempVan[2]));
-            $("#forecastTemp3Van").html(K2C(forecastTempVan[3]));
-            $("#forecastTemp4Van").html(K2C(forecastTempVan[4]));  
-
             $("#convertF").click(function(){
                 $("#temperatureVan").html(K2F(tempVan));
                 $("#forecastTemp0Van").html(K2F(forecastTempVan[0]));
@@ -48,6 +31,9 @@ $(document).ready(function(){
                 $("#forecastTemp2Van").html(K2F(forecastTempVan[2]));
                 $("#forecastTemp3Van").html(K2F(forecastTempVan[3]));
                 $("#forecastTemp4Van").html(K2F(forecastTempVan[4])); 
+                $("#forecastTemp5Van").html(K2F(forecastTempVan[5]));
+                $("#forecastTemp6Van").html(K2F(forecastTempVan[6]));
+                $("#forecastTemp7Van").html(K2F(forecastTempVan[7]));
             }); 
             $("#convertC").click(function(){
                 $("#temperatureVan").html(K2C(tempVan));
@@ -55,8 +41,28 @@ $(document).ready(function(){
                 $("#forecastTemp1Van").html(K2C(forecastTempVan[1]));
                 $("#forecastTemp2Van").html(K2C(forecastTempVan[2]));
                 $("#forecastTemp3Van").html(K2C(forecastTempVan[3]));
-                $("#forecastTemp4Van").html(K2C(forecastTempVan[4])); 
-            });       
+                $("#forecastTemp4Van").html(K2C(forecastTempVan[4]));
+                $("#forecastTemp5Van").html(K2C(forecastTempVan[5]));
+                $("#forecastTemp6Van").html(K2C(forecastTempVan[6]));
+                $("#forecastTemp7Van").html(K2C(forecastTempVan[7]));
+            });  
+
+        }); 
+        $.getJSON(forecastS,function(data){
+            for(var i = 0;i<8;i++){
+                forecastTempVan[i] = data.list[i].main.temp; // + data.city.name;     
+            }
+            console.log(forecastTempVan);
+            $("#forecastTemp0Van").html(K2C(forecastTempVan[0]));
+            $("#forecastTemp1Van").html(K2C(forecastTempVan[1]));
+            $("#forecastTemp2Van").html(K2C(forecastTempVan[2]));
+            $("#forecastTemp3Van").html(K2C(forecastTempVan[3]));
+            $("#forecastTemp4Van").html(K2C(forecastTempVan[4]));
+            $("#forecastTemp5Van").html(K2C(forecastTempVan[5]));
+            $("#forecastTemp6Van").html(K2C(forecastTempVan[6]));
+            $("#forecastTemp7Van").html(K2C(forecastTempVan[7])); 
+
+     
         });  
     }
     function secondCity(city,country){
@@ -76,23 +82,6 @@ $(document).ready(function(){
             $("#windVic").html(windVic);
             $("#directionVic").html(degreeToDirection(directionVic));
             $("#temperatureVic").html(K2C(tempVic));
-            $("#forecastTemp0Vic").html(K2C(forecastTempVic[0]));
-            $("#forecastTemp1Vic").html(K2C(forecastTempVic[1]));
-            $("#forecastTemp2Vic").html(K2C(forecastTempVic[2]));
-            $("#forecastTemp3Vic").html(K2C(forecastTempVic[3]));
-            $("#forecastTemp4Vic").html(K2C(forecastTempVic[4]));
-        }); 
-        $.getJSON(forecastS,function(data){
-            for(var i = 0;i<5;i++){
-                forecastTempVic[i] = data.list[i].main.temp;     
-            }
-            console.log(forecastTempVic);
-            $("#forecastTemp0Vic").html(K2C(forecastTempVic[0]));
-            $("#forecastTemp1Vic").html(K2C(forecastTempVic[1]));
-            $("#forecastTemp2Vic").html(K2C(forecastTempVic[2]));
-            $("#forecastTemp3Vic").html(K2C(forecastTempVic[3]));
-            $("#forecastTemp4Vic").html(K2C(forecastTempVic[4]));  
-            
             $("#convertF").click(function(){
                 $("#temperatureVic").html(K2F(tempVic));
                 $("#forecastTemp0Vic").html(K2F(forecastTempVic[0]));
@@ -100,6 +89,9 @@ $(document).ready(function(){
                 $("#forecastTemp2Vic").html(K2F(forecastTempVic[2]));
                 $("#forecastTemp3Vic").html(K2F(forecastTempVic[3]));
                 $("#forecastTemp4Vic").html(K2F(forecastTempVic[4])); 
+                $("#forecastTemp5Vic").html(K2F(forecastTempVic[5]));
+                $("#forecastTemp6Vic").html(K2F(forecastTempVic[6]));
+                $("#forecastTemp7Vic").html(K2F(forecastTempVic[7]));
             }); 
             $("#convertC").click(function(){
                 $("#temperatureVic").html(K2C(tempVic));
@@ -107,8 +99,25 @@ $(document).ready(function(){
                 $("#forecastTemp1Vic").html(K2C(forecastTempVic[1]));
                 $("#forecastTemp2Vic").html(K2C(forecastTempVic[2]));
                 $("#forecastTemp3Vic").html(K2C(forecastTempVic[3]));
-                $("#forecastTemp4Vic").html(K2C(forecastTempVic[4])); 
+                $("#forecastTemp4Vic").html(K2C(forecastTempVic[4]));
+                $("#forecastTemp5Vic").html(K2C(forecastTempVic[5]));
+                $("#forecastTemp6Vic").html(K2C(forecastTempVic[6]));
+                $("#forecastTemp7Vic").html(K2C(forecastTempVic[7]));
             });
+        }); 
+        $.getJSON(forecastS,function(data){
+            for(var i = 0;i<8;i++){
+                forecastTempVic[i] = data.list[i].main.temp;     
+            }
+            console.log(forecastTempVic);
+            $("#forecastTemp0Vic").html(K2C(forecastTempVic[0]));
+            $("#forecastTemp1Vic").html(K2C(forecastTempVic[1]));
+            $("#forecastTemp2Vic").html(K2C(forecastTempVic[2]));
+            $("#forecastTemp3Vic").html(K2C(forecastTempVic[3]));
+            $("#forecastTemp4Vic").html(K2C(forecastTempVic[4]));
+            $("#forecastTemp5Vic").html(K2C(forecastTempVic[5]));
+            $("#forecastTemp6Vic").html(K2C(forecastTempVic[6]));
+            $("#forecastTemp7Vic").html(K2C(forecastTempVic[7]));  
         }); 
 
     }
@@ -131,30 +140,16 @@ $(document).ready(function(){
             $("#directionKel").html(degreeToDirection(directionKel));
              
             $("#temperatureKel").html(K2C(tempKel));
-            $("#forecastTemp0Kel").html(K2C(forecastTempKel[0]));
-            $("#forecastTemp1Kel").html(K2C(forecastTempKel[1]));
-            $("#forecastTemp2Kel").html(K2C(forecastTempKel[2]));
-            $("#forecastTemp3Kel").html(K2C(forecastTempKel[3]));
-            $("#forecastTemp4Kel").html(K2C(forecastTempKel[4]));
-        }); 
-        $.getJSON(forecastS, function(data){
-            for(var i = 0;i<5;i++){
-                forecastTempKel[i] = data.list[i].main.temp;    
-            }
-            console.log(forecastTempKel);
-            $("#forecastTemp0Kel").html(K2C(forecastTempKel[0]));
-            $("#forecastTemp1Kel").html(K2C(forecastTempKel[1]));
-            $("#forecastTemp2Kel").html(K2C(forecastTempKel[2]));
-            $("#forecastTemp3Kel").html(K2C(forecastTempKel[3]));
-            $("#forecastTemp4Kel").html(K2C(forecastTempKel[4])); 
-
-            $("#convertF").click(function(){
+                $("#convertF").click(function(){
                 $("#temperatureKel").html(K2F(tempKel));
                 $("#forecastTemp0Kel").html(K2F(forecastTempKel[0]));
                 $("#forecastTemp1Kel").html(K2F(forecastTempKel[1]));
                 $("#forecastTemp2Kel").html(K2F(forecastTempKel[2]));
                 $("#forecastTemp3Kel").html(K2F(forecastTempKel[3]));
-                $("#forecastTemp4Kel").html(K2F(forecastTempKel[4])); 
+                $("#forecastTemp4Kel").html(K2F(forecastTempKel[4]));
+                $("#forecastTemp5Kel").html(K2F(forecastTempKel[5]));
+                $("#forecastTemp6Kel").html(K2F(forecastTempKel[6]));
+                $("#forecastTemp7Kel").html(K2F(forecastTempKel[7])); 
             }); 
             $("#convertC").click(function(){
                 $("#temperatureKel").html(K2C(tempKel));
@@ -163,14 +158,32 @@ $(document).ready(function(){
                 $("#forecastTemp2Kel").html(K2C(forecastTempKel[2]));
                 $("#forecastTemp3Kel").html(K2C(forecastTempKel[3]));
                 $("#forecastTemp4Kel").html(K2C(forecastTempKel[4])); 
+                $("#forecastTemp5Kel").html(K2C(forecastTempKel[5]));
+                $("#forecastTemp6Kel").html(K2C(forecastTempKel[6]));
+                $("#forecastTemp7Kel").html(K2C(forecastTempKel[7])); 
             });
+        }); 
+        $.getJSON(forecastS, function(data){
+            for(var i = 0;i<8;i++){
+                forecastTempKel[i] = data.list[i].main.temp;    
+            }
+            console.log(forecastTempKel);
+            $("#forecastTemp0Kel").html(K2C(forecastTempKel[0]));
+            $("#forecastTemp1Kel").html(K2C(forecastTempKel[1]));
+            $("#forecastTemp2Kel").html(K2C(forecastTempKel[2]));
+            $("#forecastTemp3Kel").html(K2C(forecastTempKel[3]));
+            $("#forecastTemp4Kel").html(K2C(forecastTempKel[4])); 
+            $("#forecastTemp5Kel").html(K2C(forecastTempKel[5]));
+            $("#forecastTemp6Kel").html(K2C(forecastTempKel[6]));
+            $("#forecastTemp7Kel").html(K2C(forecastTempKel[7]));
             
         }); 
     }
 
     //the "how to use" button
     $("#info").click(function(){
-        alert("The temperature are default to Celsius, by clicking on the convert button allows you to switch between Fahrenheit and Celsius. And by clicking the card, you will be able to see the long term forecast for the next 14 days");
+        alert("The temperature are default to Celsius, by clicking on the convert button allows you to switch between Fahrenheit and Celsius."+
+            "\nAlso, by clicking the forecast button you will be able to see the long term forecast for the next 8 days and short term forecast for the next 24 hours.");
     });
 
 });

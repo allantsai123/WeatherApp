@@ -1,14 +1,15 @@
 .card{
-    display: block;
     border: 3px solid blue;
     background-color: grey;
     height: relative;
     border-radius: 20px;
-    margin-top: 15px;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
+
+
 #time, #date{
     color: blue;
-    font-size: 24px;
 
 }
 #locationVan, #locationVic, #locationKel{
@@ -49,4 +50,10 @@
 .forecastShort{
 	text-align: center;
 	font-size: 1.2em;
+}
+#header,.date,.time{
+	text-align: center;
+}
+.btn{
+	margin-top: 5px;
 }

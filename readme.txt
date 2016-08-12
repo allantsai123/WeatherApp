@@ -12,3 +12,4 @@ To do:
 	1. long term forecasts
 	2. Animation to turn a card
 	3. Adding a city (Add a card)
+	4. add background image accordingly to time
