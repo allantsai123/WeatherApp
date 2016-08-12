@@ -76,7 +76,6 @@ $(document).ready(function(){
             });       
         });  
     }
-
     function victoriaWeather(city,country){
         var api = "http://api.openweathermap.org/data/2.5/weather?q="+city+","+country+"&appid="+APPID;
         var forecastS="http://api.openweathermap.org/data/2.5/forecast?q="+city+","+country+"&appid="+APPID;
@@ -185,8 +184,6 @@ $(document).ready(function(){
             
         }); 
     }
-
-
 
     //the "how to use" button
     $("#info").click(function(){
