@@ -2,7 +2,7 @@
     border: 3px solid blue;
     background-color: grey;
     height: relative;
-    border-radius: 20px;
+    border-radius: 15px;
     margin-top: 20px;
     margin-bottom: 30px;
 }
@@ -23,19 +23,18 @@
 }
 .top,.top.row{
 	height:relative;
-	display: block;
 	background-color: #4ea27f;
+	border-radius: 20px;
 	font-size: 3em;
 	margin-top: 5px;
 	text-align: center;
-		margin-right: 0px;
+	margin-right: 0px;
     margin-left: 0px;
 }
 .mid,.mid.row{		
-	height:relative;
 	display: block;	
 	font-size: 1.1em;
-	border:2px solid black;
+	border:1px solid black;
 	margin-top: 5px;
 	text-align: center;
 	margin-right: 0px;
