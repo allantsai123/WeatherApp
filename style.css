@@ -1,6 +1,12 @@
+#pageBackground{
+
+    background-image: url(img/day.jpg);
+    /*background-image: url(img/night.jpg);*/
+
+}
 .card{
-    border: 3px solid blue;
     background-color: grey;
+    border: 3px solid blue;
     height: relative;
     border-radius: 15px;
     margin-top: 20px;
@@ -10,20 +16,19 @@
 
 #time, #date{
     color: blue;
-
 }
 #locationVan, #locationVic, #locationKel{
+    background-color: pink;
 	text-align: center;
 	height: relative;
 	display:block;
 	border-radius: 20px;
-	background-color: pink;
 	font-size: 3em;
 	margin-top: 2px;
 }
 .top,.top.row{
+    background-color: #4ea27f;
 	height:relative;
-	background-color: #4ea27f;
 	border-radius: 20px;
 	font-size: 3em;
 	margin-top: 5px;
@@ -42,6 +47,7 @@
 }
 
 .bot, .bot.row{
+    font-size: 1.5em;
 	margin-top: 10px;
 	margin-right: 0px;
     margin-left: 0px;
@@ -55,4 +61,10 @@
 }
 .btn{
 	margin-top: 5px;
+}
+#forecastTitleVan,#forecastTitleVic,#forecastTitleKel{
+    font-size: 1.2em;
+}
+#info,#convertC,#convertF,#shortTerm,#longTerm,#addCity,#removeCity{
+
 }

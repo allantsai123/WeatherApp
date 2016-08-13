@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
-<body>
+<body id="pageBackground">
 	<div class="container">
 		<h1 id="header">Weather App</h1> 
 		<h2 class="col-md-6 date">Current Date: <div id="date">Current date</div></h2>
@@ -17,8 +17,8 @@
 			<button id="info" type="button" class="btn btn-lg btn-info">How to use</button>
 			<button id="convertC" type="button" class="btn btn-primary btn-lg">Convert to Celsius</button>
 			<button id="convertF" type="button" class="btn btn-primary btn-lg">Convert to Fahrenheit</button>
-			<button id="shortterm" type="button" class="btn btn-primary btn-lg">Short Term Forecast</button>
-			<button id="longterm" type="button" class="btn btn-primary btn-lg">Long Term Forecast</button>
+			<button id="shortTerm" type="button" class="btn btn-primary btn-lg">Short Term Forecast</button>
+			<button id="longTerm" type="button" class="btn btn-primary btn-lg">Long Term Forecast</button>
 			<button id="addCity" type="button" class="btn btn-success btn-lg">Add city</button>
 			<button id="removeCity" type="button" class="btn btn-lg btn-danger">Remove city</button>
 		</div>
@@ -46,37 +46,37 @@
 							</div>
 						</div>
 						<div class="bot row forecastShort">
-							<h4>Forecast for the next 24 hours</h4>
+							<h4 id="forecastTitleVan">Forecast for the next 24 hours</h4>
 							<div class="row">
-								<div class="col-xs-8">The next 3 hours</div>
+								<div class="col-xs-8" id="next0Van">The next 3 hours</div>
 								<div class="col-xs-4"><span id = "forecastTemp0Van">temp</span>&deg;</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-8">The next 6 hours</div>
+								<div class="col-xs-8" id="next1Van">The next 6 hours</div>
 								<div class="col-xs-4"><span id = "forecastTemp1Van">temp</span>&deg;</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-8">The next 9 hours</div>
+								<div class="col-xs-8" id="next2Van">The next 9 hours</div>
 								<div class="col-xs-4"><span id = "forecastTemp2Van">temp</span>&deg;</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-8">The next 12 hours</div>
+								<div class="col-xs-8" id="next3Van">The next 12 hours</div>
 								<div class="col-xs-4"><span id = "forecastTemp3Van">temp</span>&deg;</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-8">The next 15 hours</div>
+								<div class="col-xs-8" id="next4Van">The next 15 hours</div>
 								<div class="col-xs-4"><span id = "forecastTemp4Van">temp</span>&deg;</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-8">The next 18 hours</div>
+								<div class="col-xs-8" id="next5Van">The next 18 hours</div>
 								<div class="col-xs-4"><span id = "forecastTemp5Van">temp</span>&deg;</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-8">The next 21 hours</div>
+								<div class="col-xs-8" id="next6Van">The next 21 hours</div>
 								<div class="col-xs-4"><span id = "forecastTemp6Van">temp</span>&deg;</div>
 							</div>
 							<div class="row">
-								<div class="col-xs-8">The next 24 hours</div>
+								<div class="col-xs-8" id="next7Van">The next 24 hours</div>
 								<div class="col-xs-4"><span id = "forecastTemp7Van">temp</span>&deg;</div>
 							</div>
 						</div>
@@ -102,37 +102,37 @@
 						</div>
 					</div>
 					<div class="bot row forecastShort">
-						<h4>Forecast for the next 24 hours</h4>
+						<h4 id="forecastTitleVic">Forecast for the next 24 hours</h4>
 						<div class="row">
-							<div class="col-xs-8">The next 3 hours</div>
+							<div class="col-xs-8" id="next0Vic">The next 3 hours</div>
 							<div class="col-xs-4"><span id = "forecastTemp0Vic">temp</span>&deg;</div>
 						</div>
 						<div class="row">
-							<div class="col-xs-8">The next 6 hours</div>
+							<div class="col-xs-8" id="next1Vic">The next 6 hours</div>
 							<div class="col-xs-4"><span id = "forecastTemp1Vic">temp</span>&deg;</div>
 						</div>
 						<div class="row">
-							<div class="col-xs-8">The next 9 hours</div>
+							<div class="col-xs-8" id="next2Vic">The next 9 hours</div>
 							<div class="col-xs-4"><span id = "forecastTemp2Vic">temp</span>&deg;</div>
 						</div>
 						<div class="row">
-							<div class="col-xs-8">The next 12 hours</div>
+							<div class="col-xs-8" id="next3Vic">The next 12 hours</div>
 							<div class="col-xs-4"><span id = "forecastTemp3Vic">temp</span>&deg;</div>
 						</div>
 						<div class="row">
-							<div class="col-xs-8">The next 15 hours</div>
+							<div class="col-xs-8" id="next4Vic">The next 15 hours</div>
 							<div class="col-xs-4"><span id = "forecastTemp4Vic">temp</span>&deg;</div>
 						</div>
 						<div class="row">
-							<div class="col-xs-8">The next 18 hours</div>
+							<div class="col-xs-8" id="next5Vic">The next 18 hours</div>
 							<div class="col-xs-4"><span id = "forecastTemp5Vic">temp</span>&deg;</div>
 						</div>
 						<div class="row">
-							<div class="col-xs-8">The next 21 hours</div>
+							<div class="col-xs-8" id="next6Vic">The next 21 hours</div>
 							<div class="col-xs-4"><span id = "forecastTemp6Vic">temp</span>&deg;</div>
 						</div>
 						<div class="row">
-							<div class="col-xs-8">The next 24 hours</div>
+							<div class="col-xs-8" id="next7Vic">The next 24 hours</div>
 							<div class="col-xs-4"><span id = "forecastTemp7Vic">temp</span>&deg;</div>
 						</div>
 					</div>
@@ -158,37 +158,37 @@
 						</div>
 					</div>
 					<div class="bot row forecastShort" >
-						<h4>Forecast for the next 24 hours</h4>
+						<h4 id="forecastTitleKel">Forecast for the next 24 hours</h4>
 						<div class="row">
-							<div class="col-xs-8">The next 3 hours</div>
+							<div class="col-xs-8" id="next0Kel">The next 3 hours</div>
 							<div class="col-xs-4"><span id = "forecastTemp0Kel">temp</span>&deg;</div>
 						</div>
 						<div class="row">
-							<div class="col-xs-8">The next 6 hours</div>
+							<div class="col-xs-8" id="next1Kel">The next 6 hours</div>
 							<div class="col-xs-4"><span id = "forecastTemp1Kel">temp</span>&deg;</div>
 						</div>
 						<div class="row">
-							<div class="col-xs-8">The next 9 hours</div>
+							<div class="col-xs-8" id="next2Kel">The next 9 hours</div>
 							<div class="col-xs-4"><span id = "forecastTemp2Kel">temp</span>&deg;</div>
 						</div>
 						<div class="row">
-							<div class="col-xs-8">The next 12 hours</div>
+							<div class="col-xs-8" id="next3Kel">The next 12 hours</div>
 							<div class="col-xs-4"><span id = "forecastTemp3Kel">temp</span>&deg;</div>
 						</div>
 						<div class="row">
-							<div class="col-xs-8">The next 15 hours</div>
+							<div class="col-xs-8" id="next4Kel">The next 15 hours</div>
 							<div class="col-xs-4"><span id = "forecastTemp4Kel">temp</span>&deg;</div>
 						</div>
 						<div class="row">
-							<div class="col-xs-8">The next 18 hours</div>
+							<div class="col-xs-8" id="next5Kel">The next 18 hours</div>
 							<div class="col-xs-4"><span id = "forecastTemp5Kel">temp</span>&deg;</div>
 						</div>
 						<div class="row">
-							<div class="col-xs-8">The next 21 hours</div>
+							<div class="col-xs-8" id="next6Kel">The next 21 hours</div>
 							<div class="col-xs-4"><span id = "forecastTemp6Kel">temp</span>&deg;</div>
 						</div>
 						<div class="row">
-							<div class="col-xs-8">The next 24 hours</div>
+							<div class="col-xs-8" id="next7Kel">The next 24 hours</div>
 							<div class="col-xs-4"><span id = "forecastTemp7Kel">temp</span>&deg;</div>
 						</div>
 					</div>
