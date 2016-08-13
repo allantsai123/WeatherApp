@@ -13,7 +13,6 @@
     color: blue;
 }
 #locationVan, #locationVic, #locationKel{
-    /*background-color: pink;*/
 	text-align: center;
 	height: relative;
 	display:block;
@@ -22,7 +21,6 @@
 	margin-top: 2px;
 }
 .top,.top.row{
-    /*background-color: #4ea27f;*/
 	height:relative;
 	border-radius: 20px;
 	font-size: 3em;
@@ -56,11 +54,14 @@
 }
 .btn{
 	margin-top: 5px;
- 
 }
 #forecastTitleVan,#forecastTitleVic,#forecastTitleKel{
     font-size: 1.2em;
 }
-#info,#convertC,#convertF,#shortTerm,#longTerm,#addCity,#removeCity{
 
+@media screen and (min-width: 1000px){
+	.btn{
+		margin-top: 5px;
+		margin-left:35px;
+	}
 }
