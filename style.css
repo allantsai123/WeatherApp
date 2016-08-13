@@ -1,12 +1,9 @@
 #pageBackground{
-
     background-image: url(img/day.jpg);
-    /*background-image: url(img/night.jpg);*/
-
 }
 .card{
-    background-color: grey;
-    border: 3px solid blue;
+    background-color: #D4D7FE;
+    border: 3px solid black;
     height: relative;
     border-radius: 15px;
     margin-top: 20px;
@@ -18,7 +15,7 @@
     color: blue;
 }
 #locationVan, #locationVic, #locationKel{
-    background-color: pink;
+    /*background-color: pink;*/
 	text-align: center;
 	height: relative;
 	display:block;
@@ -27,7 +24,7 @@
 	margin-top: 2px;
 }
 .top,.top.row{
-    background-color: #4ea27f;
+    /*background-color: #4ea27f;*/
 	height:relative;
 	border-radius: 20px;
 	font-size: 3em;
@@ -38,14 +35,14 @@
 }
 .mid,.mid.row{		
 	display: block;	
-	font-size: 1.1em;
-	border:1px solid black;
+	font-size: 1.4em;
+	border-top:3px solid black;
+    border-bottom:3px solid black;
 	margin-top: 5px;
 	text-align: center;
 	margin-right: 0px;
     margin-left: 0px;
 }
-
 .bot, .bot.row{
     font-size: 1.5em;
 	margin-top: 10px;
