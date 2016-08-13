@@ -6,6 +6,7 @@ $(document).ready(function(){
     secondCity("Victoria,ca");
     thirdCity("kelowna,ca");
 
+    //1st city
     function firstCity(city,country){
         var api = "http://api.openweathermap.org/data/2.5/weather?q="+city+","+country+"&appid="+APPID;
         var forecastS="http://api.openweathermap.org/data/2.5/forecast?q="+city+","+country+"&appid="+APPID;
@@ -114,6 +115,7 @@ $(document).ready(function(){
             console.log("this is vancouver long term " +longforecastTempVan);
         });
     }
+    //2nd city
     function secondCity(city,country){
         var api = "http://api.openweathermap.org/data/2.5/weather?q="+city+","+country+"&appid="+APPID;
         var forecastS="http://api.openweathermap.org/data/2.5/forecast?q="+city+","+country+"&appid="+APPID;
@@ -219,7 +221,7 @@ $(document).ready(function(){
             console.log("this is Victoria long term " +longforecastTempVic);
         });
     }
-
+    //3rd city
     function thirdCity(city,country){
         var api = "http://api.openweathermap.org/data/2.5/weather?q="+city+","+country+"&appid="+APPID;
         var forecastS="http://api.openweathermap.org/data/2.5/forecast?q="+city+","+country+"&appid="+APPID;
@@ -280,7 +282,6 @@ $(document).ready(function(){
                 $("#next5Kel").html("The next 18 hours");
                 $("#next6Kel").html("The next 21 hours");
                 $("#next7Kel").html("The next 24 hours");
-
             });
             $("#longTerm").click(function(){
 
@@ -304,7 +305,6 @@ $(document).ready(function(){
                 $("#next6Kel").html("Day 7");
                 $("#next7Kel").html("Day 8");
             });
-
         }); 
         $.getJSON(forecastS, function(data){
             for(var i = 0;i<8;i++){
@@ -328,25 +328,19 @@ $(document).ready(function(){
             console.log("this is kelowna long term " +longforecastTempKel);
         });
     }
-
     //the "how to use" button
     $("#info").click(function(){
         alert("The temperature are default to Celsius, by clicking on the convert button allows you to switch between Fahrenheit and Celsius."+
             "\nAlso, by clicking the forecast button you will be able to see the long term forecast for the next 8 days and short term forecast for the next 24 hours.");
     });
-
-
 });
-    
 
 var locVan,iconVan,tempVan,humidityVan,windVan,directionVan;
 var locVic,iconVic,tempVic,humidityVic,windVic,directionVic;
 var locKel,iconKel,tempKel,humidityKel,windKel,directionKel;
-
 var forecastTempVan=[];
 var forecastTempVic=[];
 var forecastTempKel=[];
-
 var longforecastTempVan=[];
 var longforecastTempVic=[];
 var longforecastTempKel=[];
@@ -358,7 +352,6 @@ function K2F(k){
 function K2C(k){
     return Math.round(k - 273.15);
 }
-
 //degree to direction
 function degreeToDirection(degree){
     var range = 360/16;
@@ -374,7 +367,6 @@ function degreeToDirection(degree){
     }
     return "N";
 }
-
 //current date and time for the brower's time zone
 (function () {
     function startTime() {

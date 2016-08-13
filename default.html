@@ -19,68 +19,65 @@
 			<button id="convertF" type="button" class="btn btn-primary btn-lg">Fahrenheit</button>
 			<button id="shortTerm" type="button" class="btn btn-primary btn-lg">Short Term Forecast</button>
 			<button id="longTerm" type="button" class="btn btn-primary btn-lg">Long Term Forecast</button>
-<!-- 			<button id="addCity" type="button" class="btn btn-success btn-lg">Add city</button>
-			<button id="removeCity" type="button" class="btn btn-lg btn-danger">Remove city</button> -->
 		</div>
 	</div>
-
 	<div class="container">
 		<div class="row">	
 			<div class="col-md-4">
 				<div class="card">
-						<div id="locationVan">
-							Loading city
+					<div id="locationVan">
+						Loading city
+					</div>
+					<div class="top row">
+						<div class="icon col-md-6"><img id="iconVan" width="75px" src="img/code/211.png"/></div>
+						<div class="temp col-md-6"><span id="temperatureVan">loading</span>&deg;</div>
+					</div>	
+					<div class="mid row">
+						<div class="humidity col-md-4">
+							<img src="img/humidity.png" height="20px"/>
+							<span id="humidityVan">0</span> %
 						</div>
-						<div class="top row">
-							<div class="icon col-md-6"><img id="iconVan" width="75px" src="img/code/211.png"/></div>
-							<div class="temp col-md-6"><span id="temperatureVan">loading</span>&deg;</div>
-						</div>	
-						<div class="mid row">
-							<div class="humidity col-md-4">
-								<img src="img/humidity.png" height="20px"/>
-								<span id="humidityVan">0</span> %
-							</div>
-							<div class="wind col-md-8 ">
-								<img src="img/wind.png" height="20px"/>
-								<span id="windVan">0</span> m/s <span id="directionVan">NaN</span>
-							</div>
-						</div>
-						<div class="bot row forecastShort">
-							<h4 id="forecastTitleVan">Forecast for the next 24 hours</h4>
-							<div class="row">
-								<div class="col-xs-8" id="next0Van">The next 3 hours</div>
-								<div class="col-xs-4"><span id = "forecastTemp0Van">temp</span>&deg;</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-8" id="next1Van">The next 6 hours</div>
-								<div class="col-xs-4"><span id = "forecastTemp1Van">temp</span>&deg;</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-8" id="next2Van">The next 9 hours</div>
-								<div class="col-xs-4"><span id = "forecastTemp2Van">temp</span>&deg;</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-8" id="next3Van">The next 12 hours</div>
-								<div class="col-xs-4"><span id = "forecastTemp3Van">temp</span>&deg;</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-8" id="next4Van">The next 15 hours</div>
-								<div class="col-xs-4"><span id = "forecastTemp4Van">temp</span>&deg;</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-8" id="next5Van">The next 18 hours</div>
-								<div class="col-xs-4"><span id = "forecastTemp5Van">temp</span>&deg;</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-8" id="next6Van">The next 21 hours</div>
-								<div class="col-xs-4"><span id = "forecastTemp6Van">temp</span>&deg;</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-8" id="next7Van">The next 24 hours</div>
-								<div class="col-xs-4"><span id = "forecastTemp7Van">temp</span>&deg;</div>
-							</div>
+						<div class="wind col-md-8 ">
+							<img src="img/wind.png" height="20px"/>
+							<span id="windVan">0</span> m/s <span id="directionVan">NaN</span>
 						</div>
 					</div>
+					<div class="bot row forecastShort">
+						<h4 id="forecastTitleVan">Forecast for the next 24 hours</h4>
+						<div class="row">
+							<div class="col-xs-8" id="next0Van">The next 3 hours</div>
+							<div class="col-xs-4"><span id = "forecastTemp0Van">temp</span>&deg;</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-8" id="next1Van">The next 6 hours</div>
+							<div class="col-xs-4"><span id = "forecastTemp1Van">temp</span>&deg;</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-8" id="next2Van">The next 9 hours</div>
+							<div class="col-xs-4"><span id = "forecastTemp2Van">temp</span>&deg;</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-8" id="next3Van">The next 12 hours</div>
+							<div class="col-xs-4"><span id = "forecastTemp3Van">temp</span>&deg;</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-8" id="next4Van">The next 15 hours</div>
+							<div class="col-xs-4"><span id = "forecastTemp4Van">temp</span>&deg;</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-8" id="next5Van">The next 18 hours</div>
+							<div class="col-xs-4"><span id = "forecastTemp5Van">temp</span>&deg;</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-8" id="next6Van">The next 21 hours</div>
+							<div class="col-xs-4"><span id = "forecastTemp6Van">temp</span>&deg;</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-8" id="next7Van">The next 24 hours</div>
+							<div class="col-xs-4"><span id = "forecastTemp7Van">temp</span>&deg;</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="col-md-4">
 				<div class="card">
@@ -195,7 +192,6 @@
 				</div>
 			</div>			
 		</div>	
-
 	<script type="text/javascript" src="app.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
